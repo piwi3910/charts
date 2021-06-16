@@ -1,7 +1,7 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: config
+  name: {{ .Values.nameOverride }}-config
   labels:
     {{- include "sabnzbd.labels" . | nindent 4 }}
   annotations:

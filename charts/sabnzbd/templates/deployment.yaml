@@ -74,7 +74,9 @@ spec:
       volumes:
       - name: config
         persistentVolumeClaim:
-          claimName: config
+          claimName: {{ .Values.nameOverride }}-config
       - name: downloads
-        persistentVolumeClaim:
-          claimName: downloads    
+        nfs:
+          path: /mnt/pool0/downloads
+          server: 192.168.78.2    
+      
