@@ -42,7 +42,9 @@ spec:
           - name: config
             mountPath: /datadir
           - name: downloads
-            mountPath: /downloads         
+            mountPath: /downloads   
+          - name: media
+            mountPath: /media        
           ports:
             - name: http
               containerPort: 8989
@@ -76,4 +78,8 @@ spec:
       - name: downloads
         nfs:
           path: /mnt/pool0/downloads
+          server: 192.168.78.2    
+      - name: media
+        nfs:
+          path: /mnt/pool0/media
           server: 192.168.78.2    
