@@ -35,9 +35,9 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
           - name: UID
-            value: "{{ .Values.sonarr.UID }}"
+            value: "{{ .Values.radarr.UID }}"
           - name: GID
-            value: "{{ .Values.sonarr.GID }}"   
+            value: "{{ .Values.radarr.GID }}"   
           volumeMounts:
           - name: config
             mountPath: /datadir
