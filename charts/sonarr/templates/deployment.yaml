@@ -60,7 +60,13 @@ spec:
               path: /
               port: http
             failureThreshold: 30
-            periodSeconds: 10  
+            periodSeconds: 10
+          startupProbe:
+            httpGet:
+              path: /
+              port: http
+            failureThreshold: 30
+            periodSeconds: 10              
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
